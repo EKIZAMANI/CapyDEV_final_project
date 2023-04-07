@@ -20,7 +20,7 @@ Install semua depedency yang dibutuhkan untuk menjalankan program
 composer install && npm install
 ```
 
-## Menjalankan Web Kupitilizer
+## Menjalankan Web CapyType
 Jalankan server laravel
 ```bash
 php artisan serve
