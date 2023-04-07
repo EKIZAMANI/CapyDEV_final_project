@@ -14,10 +14,17 @@ Masuk ke dalam folder CapyType
 ```bash
 cd CapyType
 ```
-
 Install semua depedency yang dibutuhkan untuk menjalankan program
 ```bash
 composer install && npm install
+```
+membuat environmet dan edit .env didalamnya
+```bash
+cp .env.example .env
+```
+Menggenerate key
+```bash
+php artisan key:generate
 ```
 
 ## Menjalankan Web CapyType
