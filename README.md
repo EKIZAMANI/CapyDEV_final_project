@@ -6,7 +6,7 @@
 3. Abdul Helmi (2108107010028)
 4. Fanul Nastia (2108107010029)
 5. Arrijalul Khairi (2108107010037)
-6. Elsa Mardhatillah Hariska (2108107010049)
+6. Elsa Mardhatillah Hariska (2108107010048)
 7. Iwansur Sidik (2108107010091)
 
 ## Persiapan Menjalankan Program
