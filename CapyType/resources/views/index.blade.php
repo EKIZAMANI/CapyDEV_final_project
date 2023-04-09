@@ -39,23 +39,23 @@
     <!-- akhir main section -->
 
     <!-- awal footer -->
-    <footer class="py-4">
-        <div class="container flex items-center justify-center mx-auto">
-            <a href="" class="flex items-center">
+    <footer class="px-20 py-4 mx-20">
+        <div class="flex flex-wrap">
+            <a href="" class="flex items-center justify-center">
                 <img src="{{ asset('assets/img/envelope.png') }}" alt="Icon" class="pr-2" width="37">
                 <p class="mr-2 text-sm text-gray-500">contact</p>
             </a>
-            <a href="" class="flex items-center"><img src="{{ asset('assets/img/discord.png') }}" alt="Icon"
+            <a href="" class="flex items-center justify-center"><img src="{{ asset('assets/img/discord.png') }}" alt="Icon"
                     class="pr-2" width="35">
                 <p class="mr-2 text-sm text-gray-500">discord</p>
             </a>
 
-            <a href="" class="flex items-center"><img src="{{ asset('assets/img/telegram.png') }}" alt="Icon"
+            <a href="" class="flex items-center justify-center"><img src="{{ asset('assets/img/telegram.png') }}" alt="Icon"
                     class="pr-2" width="30">
                 <p class="mr-2 text-sm text-gray-500">telegram</p>
             </a>
 
-            <a href="" class="flex items-center"><img src="{{ asset('assets/img/money.png') }}" alt="Icon"
+            <a href="" class="flex items-center justify-center"><img src="{{ asset('assets/img/money.png') }}" alt="Icon"
                     class="pr-2" width="30">
                 <p class="mr-2 text-sm text-gray-500">support</p>
             </a>
