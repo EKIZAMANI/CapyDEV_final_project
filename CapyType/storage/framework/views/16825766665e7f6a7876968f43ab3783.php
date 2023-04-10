@@ -12,15 +12,15 @@
 <body class="font-mono text-xl aspect-video" style="background-color: 262A33;" width="1920" height="1080">
     
     <!-- awal navbar -->
-    <div class="flex flex-wrap items-center justify-between mx-auto    " style="padding-top: 30px;">
-        <div class="flex items-center ml-10">  <img src="<?php echo e(asset('assets/img/logocapy.png')); ?>" class=" mr-3 alt="Kupitilizer Logo" width="65"/>
+    <div class="flex flex-wrap items-center justify-between mx-28    " style="padding-top: 30px;">
+        <div class="flex items-center ml-10">  <img src="<?php echo e(asset('assets/img/logocapy.png')); ?>" class=" mr-3 alt="Logo" width="65"/>
             <span class="self-center text-3xl font-bold" style="font-size: 40px; color: 
             #E5F7EF;">CapyType</span>
             <div class="flex items-center  pl-10" > 
-                <img src="<?php echo e(asset('assets/img/keyboard.png')); ?>"  class=" mr-3 alt= pr-2"Kupitilizer Logo" width="54" />
-                <img src="<?php echo e(asset('assets/img/crown.png')); ?>" class=" mr-3 pr-2"Kupitilizer Logo" width="45"/>
-                <img src="<?php echo e(asset('assets/img/information.png')); ?>" class=" mr-3 alt= pr-2"Kupitilizer Logo" width="35"/>
-                <img src="<?php echo e(asset('assets/img/setting.png')); ?>" class=" mr-3 alt= pr-2"Kupitilizer Logo" width="35"/>
+                <img src="<?php echo e(asset('assets/img/keyboard.png')); ?>"  class=" mr-3 alt= pr-2"Logo" width="54" />
+                <img src="<?php echo e(asset('assets/img/crown.png')); ?>" class=" mr-3 pr-2" alt="Logo" width="45"/>
+                <img src="<?php echo e(asset('assets/img/information.png')); ?>" class=" mr-3 alt= pr-2"Logo" width="35"/>
+                <img src="<?php echo e(asset('assets/img/setting.png')); ?>" class=" mr-3 alt= pr-2"Logo" width="35"/>
             </div>
         </div>
            
@@ -29,7 +29,7 @@
     <!-- akhir navbar -->
 
     <!-- awal description -->
-    <div class="flex items-center justify-around mx-auto mt-10 " style="padding-top: 30px; font-size: 20;">
+    <div class="flex items-center justify-around  mt-10 mx-5 " style="padding-top: 30px; font-size: 20;">
         <div class=" w-2/5">
             <p class=" font-bold" style="font-size: 71px; color: 
                 #E5F7EF;">CapyType
@@ -47,35 +47,73 @@
                 </div>
 
         </div >
-        <!-- <img src="<?php echo e(asset('assets/img/particle.png')); ?>" width="500"/> -->
-        <video width="550" loop autoplay muted preload="">
-            <source src="<?php echo e(asset('assets/gif/capyvideo.mp4')); ?>" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
+    
+        <img src="<?php echo e(asset('assets/gif/capygift.gif')); ?>"  width="500" />
 
     </div>
     <!-- akhir description -->
     
+    <!-- awal about -->
+    <div class="mx-36 p-5">
+        <p class="pt-10" style="color: #526777; font-size: 32;" >about</p>
+            <p class="flex pt-5 font-bold" style="color: #E5F7EF">CapyType is a minimalistic typing test. 
+                It features many test modes, an account system to save your typing speed history, and user
+                -configurable features such as themes and more. CapyType attempts to emulate the experience 
+                of natural keyboard typing during a typing test, by unobtrusively presenting the text prompts 
+                and displaying typed characters in-place, providing straightforward, real-time feedback on typos, 
+                speed, and accuracy.</p>
+            <p class="flex pt-5 font-bold" style="color: #E5F7EF">CapyType is currently in the development 
+                stage and will be released at a later date. it is possible that existing features will be added 
+                and modified to make it look better. We will release more features and will fix some bugs for it, 
+                so we ask users to always support us by giving feedback and letting us know of features and bugs 
+                that may bother users. Thank You</p>
+            <p class="flex pt-10" style="color: #526777">bug report or feature request</p>
+            <p class="flex pt-2 font-bold" style="color: #E5F7EF">If you encounter a bug, or have a feature request 
+                - join the Discord server, send me an email, or send the comment on Telegram channel.</p>
+            <div>
+                <p class="pt-10" style="color: #526777; font-size: 32;" >Support</p>
+                <p class="flex pt-2 font-bold" style="color: #E5F7EF">If you encounter a bug, or have a feature request 
+                - join the Discord server, send me an email, or send the comment on Telegram channel.</p>
+
+                <!-- support -->
+                <div class="mt-5">
+                    <button class=" flex justify-center mx-auto rounded-lg w-full py-8 font-bold " style="background-color: #1F232C; font-size: 32px; color: #E5F7EF;">
+                        <img src="<?php echo e(asset('assets/img/money.png')); ?>" alt="Icon"
+                        class="pr-4 w-12" style="filter: invert(94%) sepia(11%) saturate(219%) hue-rotate(95deg) brightness(104%) contrast(94%);">
+                        <p>Support</p>
+                    </button>
+                </div>
+                
+            
+            </div>
+            
+    </div>
+    <!-- akhir about -->
+
     <!-- awal footer -->
-    <footer class="ml-10 absolute bottom-5 ">
-        <div class="flex flex-wrap">
+    <footer class="flex justify-center pb-3" style="font-size: 20;" >
+        <div class="flex flex-wrap   p-3">
             <a href="" class="flex items-center justify-center">
-                <img src="<?php echo e(asset('assets/img/envelope.png')); ?>" alt="Icon" class="pr-2" width="37">
-                <p class="mr-2 text-sm text-gray-500">contact</p>
+                <img src="<?php echo e(asset('assets/img/envelope.png')); ?>" alt="Icon" 
+                class="pr-2" width="37" style="filter: invert(37%) sepia(26%) saturate(418%) hue-rotate(164deg) brightness(95%) contrast(86%);">
+                <p class="mr-2 text-gray-500">contact</p>
             </a>
-            <a href="" class="flex items-center justify-center"><img src="<?php echo e(asset('assets/img/discord.png')); ?>" alt="Icon"
-                    class="pr-2" width="35">
-                <p class="mr-2 text-sm text-gray-500">discord</p>
-            </a>
-
-            <a href="" class="flex items-center justify-center"><img src="<?php echo e(asset('assets/img/telegram.png')); ?>" alt="Icon"
-                    class="pr-2" width="30">
-                <p class="mr-2 text-sm text-gray-500">telegram</p>
+            <a href="https://discord.gg/RRRTQTby" class="flex items-center justify-center">
+                <img src="<?php echo e(asset('assets/img/discord.png')); ?>" alt="Icon"
+                    class="pr-2" width="35" style="filter: invert(37%) sepia(26%) saturate(418%) hue-rotate(164deg) brightness(95%) contrast(86%);">
+                <p class="mr-2 text-gray-500">discord</p>
             </a>
 
-            <a href="" class="flex items-center justify-center"><img src="<?php echo e(asset('assets/img/money.png')); ?>" alt="Icon"
-                    class="pr-2" width="30">
-                <p class="mr-2 text-sm text-gray-500">support</p>
+            <a href="" class="flex items-center justify-center">
+                <img src="<?php echo e(asset('assets/img/telegram.png')); ?>" alt="Icon"
+                    class="pr-2" width="30" style="filter: invert(37%) sepia(26%) saturate(418%) hue-rotate(164deg) brightness(95%) contrast(86%);">
+                <p class="mr-2 text-gray-500">telegram</p>
+            </a>
+
+            <a href="" class="flex items-center justify-center">
+                <img src="<?php echo e(asset('assets/img/money.png')); ?>" alt="Icon"
+                    class="pr-2" width="30" style="filter: invert(37%) sepia(26%) saturate(418%) hue-rotate(164deg) brightness(95%) contrast(86%);">
+                <p class="mr-2 text-gray-500">support</p>
             </a>
 
         </div>
