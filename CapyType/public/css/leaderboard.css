@@ -1,0 +1,55 @@
+.sign-btn {
+    border-radius: 18px;
+    display: flex;
+    width: 184px;
+    height: 40px;
+    background-color: #1f232c;
+    color: #526777;
+    font-size: 16px;
+    font-weight: 900;
+    font-family: "Roboto Mono";
+    margin-top: 50px;
+    justify-content: center;
+    align-items: center;
+}
+
+.tabel {
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    color: #526777;
+    border-collapse: collapse;
+    border-radius: 10px;
+}
+
+tr:nth-child(odd) {
+    background-color: #1f232c;
+    border-radius: 10px 0 0 10px;
+}
+
+tr:nth-child(even) {
+    border: none;
+    border: 1px solid #2aba86;
+    border-radius: 0 10px 10px 0;
+}
+
+.no {
+    text-align: center;
+    padding-left: 20px;
+}
+
+.name {
+    text-align: left;
+    padding-left: 45;
+    padding-right: 310px;
+}
+
+.wpm {
+    text-align: center;
+    padding-right: 150px;
+}
+
+.accuracy {
+    text-align: center;
+    padding-right: 20px;
+}

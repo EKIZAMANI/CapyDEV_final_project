@@ -1,0 +1,63 @@
+.sign-btn {
+    border-radius: 18px;
+    display: flex;
+    width: 184px;
+    height: 40px;
+    background-color: #1f232c;
+    color: #526777;
+    font-size: 16px;
+    font-weight: 900;
+    font-family: "Roboto Mono";
+    margin-top: 50px;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-support {
+    align-items: center;
+    margin-left: 165px;
+    margin-right: 165px;
+    margin-top: 70px;
+}
+
+.sup-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #1f232c;
+    width: 1105;
+    height: 97;
+    border-radius: 18px;
+}
+
+.mail-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #1f232c;
+    width: 355;
+    height: 97;
+    border-radius: 18px;
+}
+
+.dc-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #1f232c;
+    margin-left: 25px;
+    width: 355;
+    height: 97;
+    border-radius: 18px;
+}
+
+.tele-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #1f232c;
+    margin-left: 25px;
+    width: 355;
+    height: 97;
+    border-radius: 18px;
+}

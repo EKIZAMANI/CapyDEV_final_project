@@ -1,0 +1,64 @@
+.sign-btn {
+    border-radius: 18px;
+    display: flex;
+    width: 184px;
+    height: 40px;
+    background-color: #1f232c;
+    color: #526777;
+    font-size: 16px;
+    font-weight: 900;
+    font-family: "Roboto Mono";
+    margin-top: 50px;
+    justify-content: center;
+    align-items: center;
+}
+
+.live-wpm-hide {
+    border-radius: 8px;
+    width: 185px;
+    height: 53px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    font-weight: 900;
+    margin-bottom: 0;
+    cursor: pointer;
+}
+
+.live-wpm-show {
+    border-radius: 8px;
+    width: 185px;
+    height: 53px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    font-weight: 900;
+    margin-bottom: 0;
+    cursor: pointer;
+}
+
+.live-wpm-hide-font {
+    border-radius: 8px;
+    width: 399px;
+    height: 62px;
+    justify-content: left;
+    align-items: center;
+    display: flex;
+    font-weight: 900;
+    margin-bottom: 0;
+    cursor: pointer;
+    padding-left: 15px;
+}
+
+.live-wpm-hide-fontsize {
+    border-radius: 8px;
+    width: 116px;
+    height: 62px;
+    justify-content: right;
+    align-items: center;
+    display: flex;
+    font-weight: 900;
+    margin-bottom: 0;
+    cursor: pointer;
+    padding-left: 15px;
+}
