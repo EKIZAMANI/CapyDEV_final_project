@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="setting.css">
+    <link rel="stylesheet" href="public/css/setting.css">
 </head>
 <body style="background-color: #262a33; font-family: Roboto Mono;">
     <div style="display: flex; align-items: center; margin-left:20px;">
