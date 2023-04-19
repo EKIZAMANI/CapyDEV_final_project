@@ -11,20 +11,20 @@
 
 <body class="font-mono text-xl aspect-video" style="background-color: #262A33;" width="1920" height="1080">
     <!-- awal navbar -->
-    <div class="flex flex-wrap items-center justify-between mx-auto " style="padding-top: 30px;">
-        <div class="flex items-center ml-10"> <img src="{{ asset('assets/img/logocapy.png') }}" class="mr-3" alt="Icon"
+    <div class="flex flex-wrap items-center justify-between mx-28" style="padding-top: 30px;">
+        <div class="flex items-center ml-10"> <img src="{{ asset('assets/img/logocapy.png') }}" class="mr-3" alt="Logo"
                 width="65" />
             <span class="self-center text-3xl font-bold"
                 style="font-size: 40px; color: 
                 #E5F7EF;">CapyType</span>
             <div class="flex items-center pl-10">
-                <a href=""><img src="{{ asset('assets/img/keyboard.png') }}" class="pr-2 mr-3" alt="Icon"
+                <a href=""><img src="{{ asset('assets/img/keyboard.png') }}" class="pr-2 mr-3" alt="Logo"
                         width="54" /></a>
-                <a href=""><img src="{{ asset('assets/img/crown.png') }}" class="pr-2 mr-3"alt="Icon"
+                <a href=""><img src="{{ asset('assets/img/crown.png') }}" class="pr-2 mr-3"alt="Logo"
                         width="45" /></a>
-                <a href=""><img src="{{ asset('assets/img/information.png') }}" class="pr-2 mr-3" alt="Icon"
+                <a href=""><img src="{{ asset('assets/img/information.png') }}" class="pr-2 mr-3" alt="Logo"
                         width="35" /></a>
-                <a href=""><img src="{{ asset('assets/img/setting.png') }}" class="pr-2 mr-3" alt="Icon"
+                <a href=""><img src="{{ asset('assets/img/setting.png') }}" class="pr-2 mr-3" alt="Logo"
                         width="35" /></a>
             </div>
         </div>
@@ -60,7 +60,7 @@
       </button>
     
     <div class="flex justify-center mx-20 my-16">
-        <span class="text-2xl text-center">
+        <span class="text-4xl text-center">
             <span class="text-gray-500">astaga asal guna setelah mencoba aku mengatakan tanaman kemudian karena benat </span>sedangkan sungguh habis walaupun bahwa amarah terlalu wajah layangan jarak nama cari rasio macam sekolah kemarin akar saya bahkan menjadi terbang takut hilang
         </span>
     </div>
@@ -70,13 +70,13 @@
     <!-- akhir typing section -->
 
     <!-- awal footer -->
-    <footer class="fixed bottom-0 ml-10" style="font-size:20; width:900;" >
-        <div class="flex flex-wrap p-3" style="background-color: #262A33;">
+    <footer class="flex justify-center pb-3" style="font-size:20;" >
+        <div class="flex flex-wrap p-3">
             <a href="" class="flex items-center justify-center">
                 <img src="{{ asset('assets/img/envelope.png') }}" alt="Icon" class="pr-2" width="37" style="filter: invert(38%) sepia(13%) saturate(808%) hue-rotate(164deg) brightness(95%) contrast(85%);">
                 <p class="mr-2 text-gray-500">contact</p>
             </a>
-            <a href="" class="flex items-center justify-center"><img src="{{ asset('assets/img/discord.png') }}" alt="Icon"
+            <a href="https://discord.gg/RRRTQTby" class="flex items-center justify-center"><img src="{{ asset('assets/img/discord.png') }}" alt="Icon"
                     class="pr-2" width="35" style="filter: invert(38%) sepia(13%) saturate(808%) hue-rotate(164deg) brightness(95%) contrast(85%);">
                 <p class="mr-2 text-gray-500">discord</p>
             </a>
