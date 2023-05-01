@@ -43,11 +43,10 @@ buatlah database baru bernama capytype didalam http://localhost/phpmyadmin/ atau
 create database capytype;
 ```
 
-migrate database masing-masing device didalam laravel, serta seed data
+migrate database masing-masing device didalam laravel
 
 ```bash
 php artisan migrate:refresh
-php artisan migrate --seed
 ```
 
 Menggenerate key
