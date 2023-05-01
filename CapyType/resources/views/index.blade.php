@@ -69,11 +69,13 @@
 
                 <!-- support -->
                 <div class="mt-5">
+                    <a href="https://saweria.co/capytype2023" target="_blank">
                     <button class=" flex justify-center mx-auto rounded-lg w-full py-8 font-bold " style="background-color: #1F232C; font-size: 32px; color: #E5F7EF;">
                         <img src="{{ asset('assets/img/money.png') }}" alt="Icon"
                         class="pr-4 w-12" style="filter: invert(94%) sepia(11%) saturate(219%) hue-rotate(95deg) brightness(104%) contrast(94%);">
                         <p>Support</p>
                     </button>
+                    </a>
                 </div>
                 
             
