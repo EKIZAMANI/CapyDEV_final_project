@@ -9,7 +9,7 @@
 
 </head>
 
-<body class="font-mono text-xl aspect-video" style="background-color: #262A33;" width="1920" height="1080">
+<body class="font-mono text-xl " style="background-color: #262A33;" width="1920" height="1080">
     <!-- awal navbar -->
     @include('layouts.navbar')
     <!-- akhir navbar -->
@@ -39,18 +39,18 @@
         <span class="ml-1 font-mono text-sm font-medium text-gray-600" >Indonesia</span>
       </button>
     
-    <div class="flex justify-center mx-96 my-16">
+    <div class="flex justify-center my-16 mx-28">
         <span class="text-4xl text-center">
             <span class="text-gray-500">astaga asal guna setelah mencoba aku mengatakan tanaman kemudian karena benat </span>sedangkan sungguh habis walaupun bahwa amarah terlalu wajah layangan jarak nama cari rasio macam sekolah kemarin akar saya bahkan menjadi terbang takut hilang
         </span>
     </div>
-    <div class="flex justify-center mx-20 my-16">
+    <div class="flex justify-center mx-20 mt">
         <button type="reset"><img src="{{ asset('assets/img/refresh-arrow.png') }}" alt="" style="filter: invert(62%) sepia(49%) saturate(637%) hue-rotate(107deg) brightness(90%) contrast(82%);" width="35" height="35"></button>
     </div>
     <!-- akhir typing section -->
 
     <!-- awal footer -->
-    <div class="pt-40">
+        <div class="pt-20">
         @include('layouts.footer')
     </div>
     <!-- akhir footer -->
