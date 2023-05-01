@@ -64,8 +64,8 @@
                 - join the Discord server, send me an email, or send the comment on Telegram channel.</p>
             <div>
                 <p class="pt-10" style="color: #526777; font-size: 32;" >Support</p>
-                <p class="flex pt-2 font-bold" style="color: #E5F7EF">If you encounter a bug, or have a feature request 
-                - join the Discord server, send me an email, or send the comment on Telegram channel.</p>
+                <p class="flex pt-2 font-bold" style="color: #E5F7EF">If you encounter a bug, have a feature request 
+                or just want to say hi - here are the different ways you can contact me directly.</p>
 
                 <!-- support -->
                 <div class="mt-5">
