@@ -1,6 +1,7 @@
 # SpeedTypingTest-CapyType
 
 ## Anggota Kelompok
+
 1. Furqan Ramadhan (2108107010013)
 2. M. Zaki Zamani (2108107010014)
 3. Abdul Helmi (2108107010028)
@@ -10,30 +11,60 @@
 7. Iwansur Sidik (2108107010091)
 
 ## Persiapan Menjalankan Program
+
 Masuk ke dalam folder CapyType
+
 ```bash
 cd CapyType
 ```
+
 Install semua depedency yang dibutuhkan untuk menjalankan program
+
 ```bash
-composer install && npm install
+composer install; npm install;
 ```
-membuat environmet dan edit .env didalamnya
+
+membuat environment dan edit .env didalamnya
+
 ```bash
 cp .env.example .env
 ```
+
+ganti nama database didalam .env menjadi capytype serta masukkan pasword sesuai device masing-masing.
+
+```bash
+DB_DATABASE=capytype
+DB_PASSWORD=your_password
+```
+
+buatlah database baru bernama capytype didalam http://localhost/phpmyadmin/ atau mysql
+
+```bash
+create database capytype;
+```
+
+migrate database masing-masing device didalam laravel
+
+```bash
+php artisan migrate:refresh
+```
+
 Menggenerate key
+
 ```bash
 php artisan key:generate
 ```
 
 ## Menjalankan Web CapyType
+
 Jalankan server laravel
+
 ```bash
 php artisan serve
 ```
 
 Jalankan perintah berikut untuk menjalankan server vite
+
 ```bash
 npm run dev
 ```
