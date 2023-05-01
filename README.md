@@ -21,7 +21,7 @@ cd CapyType
 Install semua depedency yang dibutuhkan untuk menjalankan program
 
 ```bash
-composer install && npm install
+composer install; npm install;
 ```
 
 membuat environment dan edit .env didalamnya
