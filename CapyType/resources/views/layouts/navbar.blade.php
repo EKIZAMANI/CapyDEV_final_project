@@ -9,6 +9,7 @@
             <a href="/about"><img src="{{ asset('assets/img/information.png') }}" class="flex pr-2 mr-3" alt="Information Icon" width="35"></a>
             <a href="/setting"><img src="{{ asset('assets/img/setting.png') }}" class="flex pr-2 mr-3" alt="Settings Icon" width="35"></a>
         </div>
+    </div>
             @auth
                 <form action="/logout" method="post">
                     @csrf
