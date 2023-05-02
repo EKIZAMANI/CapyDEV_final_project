@@ -16,39 +16,37 @@
 
     <!-- awal typing section -->
     <div class="flex justify-center mx-20 my-10">
-        <div
-            class="flex items-center px-8 py-2 font-mono text-base font-medium text-justify bg-gray-900 rounded-lg" style="color:526777">
-            <button>#custom-words</button>
-            <button>
-                <div class="flex items-center"><img src="{{ asset('assets/img/clock.png') }}" alt="time"
-                        class="ml-4" width="22" height="23"
-                        style="filter: invert(62%) sepia(49%) saturate(637%) hue-rotate(107deg) brightness(90%) contrast(82%);">
-                    <span class="ml-2" style="color: #2ABA86">time</span>
-                </div>
-            </button>
-            <button>
-                <div class="flex items-center"><img src="{{ asset('assets/img/A.png') }}" alt="A" class="ml-4"
-                        width="22" height="20"
-                        style="filter: invert(38%) sepia(13%) saturate(808%) hue-rotate(164deg) brightness(95%) contrast(85%);">
-                    <span class="ml-2">words</span>
-            </button>
-            <div class="flex items-center ml-4">
-                <button class="ml-2" id="btn-15" onclick="changeColor(this)">15</button>
-                <button class="ml-2" id="btn-30" onclick="changeColor(this)">30</button>
-                <button class="ml-2" id="btn-60" onclick="changeColor(this)" style="color: #2ABA86">60</button>
-                <button class="ml-2" id="btn-120" onclick="changeColor(this)">120</button>
-            </div>
-            <script>
-                function changeColor(button) {
-                  var buttons = document.getElementsByTagName('button');
-                  for (var i = 0; i < buttons.length; i++) {
-                    buttons[i].style.color = '#526777';
-                  }
-                  button.style.color = '#2ABA86';
-                }
-              </script>
+        <div class="flex items-center px-8 py-2 font-mono text-base font-medium text-justify bg-gray-900 rounded-lg" style="color:526777">
+          <button id="custom-words-btn" onclick="changeColor(this)">#custom-words</button>
+          <button id="time-btn" onclick="changeColor(this)">
+            <div class="flex items-center"><img src="{{ asset('assets/img/clock.png') }}" alt="time" class="ml-4" width="22" height="23"><span onclick="changeColor(this)" class="ml-2">time</span></div>
+          </button>
+          <button id="words-btn" onclick="changeColor(this)">
+            <div class="flex items-center"><img src="{{ asset('assets/img/A.png') }}" alt="A" class="ml-4" width="22" height="20" style="filter: invert(38%) sepia(13%) saturate(808%) hue-rotate(164deg) brightness(95%) contrast(85%);"><span class="ml-2">words</span>
+          </button>
+          <div class="flex items-center ml-4">
+            <button class="ml-2" id="btn-15" onclick="changeColor(this)">15</button>
+            <button class="ml-2" id="btn-30" onclick="changeColor(this)">30</button>
+            <button class="ml-2" id="btn-60" onclick="changeColor(this)">60</button>
+            <button class="ml-2" id="btn-120" onclick="changeColor(this)">120</button>
+          </div>
+          <script>
+            function changeColor(button) {
+              var buttons = document.getElementsByTagName('button');
+              for (var i = 0; i < buttons.length; i++) {
+                buttons[i].style.color = '#526777';
+              }
+              if (button.id === 'time-btn') {
+                document.getElementById('btn-60').style.color = '#2ABA86';
+                document.querySelector('.time').style.color = '#2ABA86';
+              } else {
+                button.style.color = '#2ABA86';
+              }
+            }
+            </script>
+            
         </div>
-    </div>
+      </div>            
 
     <button id="language-btn" class="flex items-center justify-center mx-auto">
         <img src="{{ asset('assets/img/earth.png') }}" alt="" class="mr-2" width="18" height="16"
