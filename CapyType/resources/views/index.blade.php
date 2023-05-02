@@ -1,21 +1,6 @@
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    @vite('resources/css/app.css')
-
-</head>
-
-<body class="font-mono text-xl aspect-video" style="background-color: 262A33;" width="1920" height="1080">
-    
-    <!-- awal navbar -->
-    @include('layouts.navbar')
-    <!-- akhir navbar -->
-
+@extends('layouts.navigation')
     <!-- awal description -->
+    @section('content')
     <div class="flex items-center justify-around  mt-10 mx-5 " style="padding-top: 30px; font-size: 20;">
         <div class=" w-2/5">
             <p class=" font-bold" style="font-size: 71px; color: 
@@ -77,14 +62,10 @@
                     </button>
                     </a>
                 </div>
+                
+            
             </div>
             
     </div>
     <!-- akhir about -->
-    <!-- awal footer -->
-    @include('layouts.footer')
-    <!-- akhir footer -->
-
-</body>
-
-</html>
+@endsection
