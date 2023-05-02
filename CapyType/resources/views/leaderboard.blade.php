@@ -3,7 +3,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CapyType</title>
+    <title>Leaderboard</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
@@ -14,9 +14,9 @@
         <img src="{{asset('assets/img/logocapy.png')}}" alt="Icon" style="margin-left: 70px; margin-right: 10px; position: relative;" width="60px" />
         <h1 style="color: #e5f7ef;">CapyType</h1>
         <a href=""><img src="{{asset('assets/img/keyboard.png')}}" alt="Icon" style="margin-left: 55px; margin-top: 10px;" width="50px" /></a>
-        <a href="leaderboard.php"><img src="{{asset('assets/img/crown.png')}}" alt="Icon" style="margin-left: 20px; margin-top: 10px;" width="40px" /></a>
-        <a href="about.php"><img src="{{asset('assets/img/information.png')}}" alt="Icon" style="margin-left: 20px; margin-top: 10px;" width="35px" /></a>
-        <a href="setting.php"><img src="{{asset('assets/img/setting.png')}}" alt="Icon" style="margin-left: 20px; margin-top: 10px;" width="35px" /></a>
+        <a href=""><img src="{{asset('assets/img/crown.png')}}" alt="Icon" style="margin-left: 20px; margin-top: 10px;" width="40px" /></a>
+        <a href=""><img src="{{asset('assets/img/information.png')}}" alt="Icon" style="margin-left: 20px; margin-top: 10px;" width="35px" /></a>
+        <a href=""><img src="{{asset('assets/img/setting.png')}}" alt="Icon" style="margin-left: 20px; margin-top: 10px;" width="35px" /></a>
         <a href="" class="sign-btn" style="margin-top: 3px; margin-left: 410px">register/login</a>
     </div>
     <div>
