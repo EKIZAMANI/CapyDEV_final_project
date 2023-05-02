@@ -1,6 +1,8 @@
     <!-- awal navbar -->
     @extends('layouts.navigation')
-  
+    @section('title')
+    CapyType | About
+    @endsection
     <!-- akhir navbar -->
       @section('content')
      <!-- awal about -->
