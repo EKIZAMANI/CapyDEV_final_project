@@ -13,9 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/', function () {
+    return view('index');
+});
 
-
-Route::get('type', function () {
+Route::get('/type', function () {
     return view('typing');
 });
 
