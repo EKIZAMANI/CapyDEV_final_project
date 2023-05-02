@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthManager;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,8 +14,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
 Route::get('/', function () {
     return view('index');
+});
+
+Route::get('/type', function () {
+    return view('typing');
 });
 
 Route::get('/about', function () {
@@ -25,9 +31,15 @@ Route::get('/typing', function () {
     return view('typing');
 });
 
-Route::get('/login', function () {
-    return view('login');
-});
+// Route::get('/login', function () {
+//     return view('login');
+// });
+
+
+Route::get('/login', [AuthManager::class, 'login']);
+Route::post('/login', [AuthManager::class, 'signin']);
+Route::post('/register', [AuthManager::class, 'signup']);
+Route::post('/logout', [AuthManager::class, 'logout']);
 
 Route::get('/leaderboard', function () {
     return view('leaderboard');
@@ -35,4 +47,7 @@ Route::get('/leaderboard', function () {
 
 Route::get('/setting', function () {
     return view('setting');
+});
+Route::get('/custom', function () {
+    return view('custom');
 });
