@@ -1,4 +1,6 @@
-<!doctype html>
+@extends('layouts.navigation')
+@section('content')
+
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -10,10 +12,8 @@
     @vite('resources/css/app.css')
     <link rel="stylesheet" href="{{ asset('assets/css/login.css') }}">
     </head>
-<body style="background-color: #262A33;" class="font-mono">
 
 <!-- awal navbar -->
-@include('layouts.navbar')
 <!-- akhir navbar -->
 
 <div class="section">
@@ -91,13 +91,4 @@
             </div>
         </div>
     </div>
- <!-- awal footer -->
- <div style="font-size: 20px">
-    @include('layouts.footer')
- </div>
-
- <!-- akhir footer -->
-</div>
-</div>
-</body>
-</html>
+@endsection
