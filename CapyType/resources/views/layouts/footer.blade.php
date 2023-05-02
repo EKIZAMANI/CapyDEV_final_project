@@ -22,6 +22,5 @@
                 class="pr-2" width="30" style="filter: invert(37%) sepia(26%) saturate(418%) hue-rotate(164deg) brightness(95%) contrast(86%);">
             <p class="mr-2 text-gray-500">support</p>
         </a>
-
     </div>
 </footer>
