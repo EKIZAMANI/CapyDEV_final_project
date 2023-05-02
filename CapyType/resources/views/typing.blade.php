@@ -17,7 +17,7 @@
     <!-- awal typing section -->
     <div class="flex justify-center mx-20 my-10">
         <div class="flex items-center px-8 py-2 font-mono text-base font-medium text-justify bg-gray-900 rounded-lg" style="color:526777">
-          <button id="custom-words-btn" onclick="changeColor(this)">#custom-words</button>
+          <button id="custom-words-btn" onclick="changeColor(this)"><a href="/custom">#custom-words</a></button>
           <button id="time-btn" onclick="changeColor(this)">
             <div class="flex items-center"><img src="{{ asset('assets/img/clock.png') }}" alt="time" class="ml-4" width="22" height="23"><span onclick="changeColor(this)" class="ml-2">time</span></div>
           </button>

@@ -40,3 +40,7 @@ Route::get('/leaderboard', function () {
 Route::get('/setting', function () {
     return view('setting');
 });
+
+Route::get('/custom', function () {
+    return view('custom');
+});
