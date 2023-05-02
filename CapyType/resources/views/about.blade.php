@@ -2,7 +2,7 @@
     <!-- awal navbar -->
     @include('layouts.navbar')
     <!-- akhir navbar -->
-
+    <body class="font-mono text-xl aspect-video" style="background-color: 262A33;" width="1920" height="1080">
      <!-- awal about -->
      <div class="mx-36 p-5">
         <p class="pt-10" style="color: #526777; font-size: 32;" >about</p>
