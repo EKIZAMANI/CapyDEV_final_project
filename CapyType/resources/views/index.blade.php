@@ -1,5 +1,8 @@
 @extends('layouts.navigation')
     <!-- awal description -->
+    @section('title')
+    CapyType | Home
+    @endsection
     @section('content')
     <div class="flex items-center justify-around  mt-10 mx-5 " style="padding-top: 30px; font-size: 20;">
         <div class=" w-2/5">
