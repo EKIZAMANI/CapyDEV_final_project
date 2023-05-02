@@ -34,6 +34,7 @@ Route::get('/typing', function () {
 Route::get('/login', [AuthManager::class, 'login']);
 Route::post('/login', [AuthManager::class, 'signin']);
 Route::post('/register', [AuthManager::class, 'signup']);
+Route::post('/logout', [AuthManager::class, 'logout']);
 
 Route::get('/leaderboard', function () {
     return view('leaderboard');

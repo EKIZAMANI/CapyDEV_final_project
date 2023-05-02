@@ -13,11 +13,14 @@
                         width="35" /></a>
             </div>
         </div>
-        <a href="/login"><button class="px-5 py-3 mr-10 font-bold rounded-lg" style="background-color: #1F232C; font-size: 16px; color: #526777;">
             @auth
-            {{ auth()->user()->name}}
+                <form action="/logout" method="post">
+                    @csrf
+                    <a href="#"><button class="px-5 py-3 mr-10 font-bold rounded-lg" style="background-color: #1F232C; font-size: 16px; color: #526777;">logout
+                </form>
             @else
-            register/login
+            <a href="/login"><button class="px-5 py-3 mr-10 font-bold rounded-lg" style="background-color: #1F232C; font-size: 16px; color: #526777;">
+                register/login
             @endauth
         </button>
         </a>
