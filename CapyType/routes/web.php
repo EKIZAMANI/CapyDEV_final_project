@@ -13,8 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
+
+
+Route::get('type', function () {
+    return view('typing');
 });
 
 Route::get('/about', function () {
