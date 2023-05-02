@@ -14,15 +14,33 @@ let timer,
   charIndex = mistakes = isTyping = 0;
 
 function loadParagraph() {
-  const ranIndex = Math.floor(Math.random() * paragraphs.length);
   typingText.innerHTML = "";
-  paragraphs[ranIndex].split("").forEach(char => {
-    let span = `<span>${char}</span>`
+  let paragraph = randomParagraph();
+  let joinedParagraph = joinParagraph(paragraph, " ");
+  joinedParagraph.split("").forEach(char => {
+    let span = `<span>${char}</span>`;
     typingText.innerHTML += span;
   });
   typingText.querySelectorAll("span")[0].classList.add("active");
   document.addEventListener("keydown", () => inpField.focus());
   typingText.addEventListener("click", () => inpField.focus());
+}
+
+
+//function to make paragraph in string become random
+const randomParagraph = () => {
+  const paragraphIndex = Math.floor(Math.random() * paragraphs.length);
+  const words = paragraphs[paragraphIndex].split(" ").sort(() => Math.random() - 0.5);
+  return words.join(" ");
+};
+
+//function to join paragraph many string
+function joinParagraph(paragraph, delimiter) {
+  let cleanParagraph = paragraph.replace(/[^\w\s]/g, "");
+  let words = cleanParagraph.split(" ");
+  let hyphenatedWords = words.map(word => word.replace(/[^A-Za-z0-9]/g, ""));
+  let hyphenatedParagraph = hyphenatedWords.join(delimiter);
+  return hyphenatedParagraph;
 }
 
 function initTyping() {
