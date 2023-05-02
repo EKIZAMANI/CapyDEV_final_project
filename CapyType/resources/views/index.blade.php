@@ -64,16 +64,18 @@
                 - join the Discord server, send me an email, or send the comment on Telegram channel.</p>
             <div>
                 <p class="pt-10" style="color: #526777; font-size: 32;" >Support</p>
-                <p class="flex pt-2 font-bold" style="color: #E5F7EF">If you encounter a bug, or have a feature request 
-                - join the Discord server, send me an email, or send the comment on Telegram channel.</p>
+                <p class="flex pt-2 font-bold" style="color: #E5F7EF">If you encounter a bug, have a feature request 
+                or just want to say hi - here are the different ways you can contact me directly.</p>
 
                 <!-- support -->
                 <div class="mt-5">
+                    <a href="https://saweria.co/capytype2023" target="_blank">
                     <button class=" flex justify-center mx-auto rounded-lg w-full py-8 font-bold " style="background-color: #1F232C; font-size: 32px; color: #E5F7EF;">
                         <img src="{{ asset('assets/img/money.png') }}" alt="Icon"
                         class="pr-4 w-12" style="filter: invert(94%) sepia(11%) saturate(219%) hue-rotate(95deg) brightness(104%) contrast(94%);">
                         <p>Support</p>
                     </button>
+                    </a>
                 </div>
                 
             
