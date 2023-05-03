@@ -7,31 +7,54 @@ const typingText = document.querySelector(".typing-text p"),
   cpmTag = document.querySelector(".cpm span"),
   accuracyTag = document.querySelector(".accuracy span"),
   timeButtons = document.querySelectorAll(".flex button");
+  var custom;
+  let paragraph, counter;
 
 let timer,
   maxTime = 60,
   timeLeft = maxTime,
   charIndex = mistakes = isTyping = 0;
 
-function loadParagraph() {
-  typingText.innerHTML = "";
-  let paragraph = randomParagraph();
-  let joinedParagraph = joinParagraph(paragraph, " ");
-  joinedParagraph.split("").forEach(char => {
-    let span = `<span>${char}</span>`;
-    typingText.innerHTML += span;
-  });
-  typingText.querySelectorAll("span")[0].classList.add("active");
-  document.addEventListener("keydown", () => inpField.focus());
-  typingText.addEventListener("click", () => inpField.focus());
-}
+  function custom() {
+    counter = 1;
+    var customWordsBtn = document.querySelector("#custom-words-btn");
+    var customWordsPopup = document.querySelector(".custom");
+  
+    custom = prompt("Enter your custom words:", "");
+    if (custom != null) {
+      paragraph = custom.value;
+      loadParagraph();
+      customWordsBtn.style.color = '#2ABA86';
+      customWordsPopup.style.display = 'none';
+    }
+  }
+  
+
+  function loadParagraph() {
+    paragraph = randomParagraph();
+    
+    typingText.innerHTML = "";
+    let joinedParagraph = joinParagraph(paragraph, " ");
+    joinedParagraph.split("").forEach(char => {
+      let span = `<span>${char}</span>`;
+      typingText.innerHTML += span;
+    });
+    typingText.querySelectorAll("span")[0].classList.add("active");
+    document.addEventListener("keydown", () => inpField.focus());
+    typingText.addEventListener("click", () => inpField.focus());
+  }
 
 
 //function to make paragraph in string become random
 const randomParagraph = () => {
   const paragraphIndex = Math.floor(Math.random() * paragraphs.length);
   const words = paragraphs[paragraphIndex].split(" ").sort(() => Math.random() - 0.5);
-  return words.join(" ");
+  if (counter == 1){
+    return custom;
+  }
+  else{
+    return words.join(" ");
+  }
 };
 
 //function to join paragraph many string
@@ -46,13 +69,27 @@ function joinParagraph(paragraph, delimiter) {
 function initTyping() {
   let characters = typingText.querySelectorAll("span");
   let typedChar = inpField.value.split("")[charIndex];
+  let isMistakeWord = false; // keep track of whether the current word has mistakes
+
   if (charIndex < characters.length - 1 && timeLeft > 0) {
     if (!isTyping) {
       timer = setInterval(initTimer, 1000);
       isTyping = true;
     }
+
+    // check if the current word has mistakes
+    const currentWord = characters[charIndex].innerText.trim();
+    const currentWordChars = currentWord.split("");
+    const typedChars = inpField.value.split("");
+    for (let i = 0; i < currentWordChars.length; i++) {
+      if (typedChars[charIndex + i] !== currentWordChars[i]) {
+        isMistakeWord = true;
+        break;
+      }
+    }
+
     if (typedChar == null) {
-      if (charIndex > 0) {
+      if (charIndex > 0 && !isMistakeWord) {
         charIndex--;
         if (characters[charIndex].classList.contains("incorrect")) {
           mistakes--;
@@ -81,6 +118,22 @@ function initTyping() {
     mistakeTag.innerText = mistakes;
     cpmTag.innerText = charIndex - mistakes;
     accuracyTag.innerText = accuracy;
+
+    // if the current word has mistakes, prevent backspacing
+    if (isMistakeWord) {
+      inpField.addEventListener("keydown", (event) => {
+        if (event.key === "Backspace") {
+          event.preventDefault();
+        }
+      });
+    } else {
+      // otherwise, allow backspacing
+      inpField.removeEventListener("keydown", (event) => {
+        if (event.key === "Backspace") {
+          event.preventDefault();
+        }
+      });
+    }
   } else {
     clearInterval(timer);
     inpField.value = "";
@@ -135,6 +188,32 @@ btn120.addEventListener("click", () => {
   resetGame();
 });
 
+function changeColor(button) {
+  var buttons = document.getElementsByTagName('button');
+  for (var i = 0; i < buttons.length; i++) {
+    buttons[i].style.color = '#526777';
+  }
+  if (button.id === 'time-btn') {
+    document.getElementById('btn-60').style.color = '#2ABA86';
+    document.querySelector('.time').style.color = '#2ABA86';
+    document.getElementById('words-btn').style.color = '#526777';
+    button.style.color = '#2ABA86';
+    document.querySelector('.typing-text').style.fontFamily = 'initial';
+  } else if (button.id === 'words-btn') {
+    document.getElementById('time-btn').style.color = '#526777';
+    document.querySelector('.time').style.color = '#526777';
+    button.style.color = '#2ABA86';
+    timeLeft = Infinity;
+    if (document.querySelector('.typing-text').style.fontFamily === 'Times New Roman') {
+      document.querySelector('.typing-text').style.fontFamily = 'initial';
+    } else {
+      document.querySelector('.typing-text').style.fontFamily = 'Times New Roman';
+    }
+  } else {
+    button.style.color = '#2ABA86';
+    document.querySelector('.time').style.color = '#2ABA86';
+  }
+}
 loadParagraph();
 inpField.addEventListener("input", initTyping);
 tryAgainBtn.addEventListener("click", resetGame);
