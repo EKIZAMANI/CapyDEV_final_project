@@ -1,6 +1,8 @@
 @extends('layouts.navigation')
 @section('content')
-
+@section('title')
+CapyType | Leaderboard
+@endsection
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/leaderboard.css">
 <body style="background-color: #262a33; font-family: Roboto Mono;">

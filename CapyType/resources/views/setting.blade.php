@@ -1,4 +1,7 @@
 @extends('layouts.navigation')
+@section('title')
+CapyType | Setting
+@endsection
 @section('content')
 
 <link rel="stylesheet" href="assets/css/setting.css">
