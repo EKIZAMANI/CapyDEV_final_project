@@ -31,11 +31,6 @@ Route::get('/typing', function () {
     return view('typing');
 });
 
-// Route::get('/login', function () {
-//     return view('login');
-// });
-
-
 Route::get('/login', [AuthManager::class, 'login']);
 Route::post('/login', [AuthManager::class, 'signin']);
 Route::post('/register', [AuthManager::class, 'signup']);
@@ -47,7 +42,4 @@ Route::get('/leaderboard', function () {
 
 Route::get('/setting', function () {
     return view('setting');
-});
-Route::get('/custom', function () {
-    return view('custom');
 });
