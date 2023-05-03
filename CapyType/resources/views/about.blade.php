@@ -1,8 +1,10 @@
-    @vite('resources/css/app.css')
     <!-- awal navbar -->
-    @include('layouts.navbar')
+    @extends('layouts.navigation')
+    @section('title')
+    CapyType | About
+    @endsection
     <!-- akhir navbar -->
-    <body class="font-mono text-xl aspect-video" style="background-color: 262A33;" width="1920" height="1080">
+      @section('content')
      <!-- awal about -->
      <div class="mx-36 p-5">
         <p class="pt-10" style="color: #526777; font-size: 32;" >about</p>
@@ -35,7 +37,7 @@
                 </div>
             </div>
             <!-- akhir support -->
-            <div class="">
+
                 <p class="pt-10" style="color: #526777; font-size: 32;" >contact</p>
                 <p class="flexs font-bold" style="color: #E5F7EF">If you encounter a bug, have a feature request or just want to say hi -
                         here are the different ways you can contact me directly..</p>
@@ -57,8 +59,5 @@
                     </button>
                 </div>       
             </div>    
-        </div>
+        @endsection
     <!-- akhir about -->
-    <!-- awal footer -->
-        @include('layouts.footer')
-    <!-- akhir footer -->

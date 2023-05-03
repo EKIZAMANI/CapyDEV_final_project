@@ -1,216 +1,44 @@
-<html lang="en">
+@extends('layouts.navigation')
+@section('title')
+CapyType | Setting
+@endsection
+@section('content')
 
-<head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CapyType</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet" />
-    @vite('resources/css/app.css')
-    <link rel="stylesheet" href="{{ asset('assets/css/setting.css') }}" />
-</head>
+<link rel="stylesheet" href="assets/css/setting.css">
 
-<body style="background-color: #262a33" class="font-mono">
-    <!-- awal navbar -->
-    @include('layouts.navbar')
-    <!-- akhir navbar -->
-    <div>
-
-        <div
-            style="
-                    justify-content: left;
-                    display: flex;
-                    margin-left: 115px;
-                    margin-bottom: 20px;
-                ">
-            <div
-                style="
-                        margin-left: 55px;
-                        margin-top: 80px;
-                        margin-bottom: 10px;
-                        color: #526777;
-                        font-size: 18px;
-                        font-family: Roboto Mono;
-                        font-size: 28px;
-                        background-color: transparent;
-                        display: flex;
-                        justify-content: left;
-                        align-items: center;
-                        width: 110px;
-                        color: #526777;
-                    ">
-                <img src="{{ asset('assets/img/setting.png') }}" alt="icon"
-                    style="width: 40px; margin-right: 15px" />setting
-            </div>
+<body>
+    <div class="font-mono setting">
+        <div>
+            <div class="sub-heading-text"><img src="assets/img/setting.png" alt="" class="sub-icon">setting</div>
         </div>
         <div>
-            <div
-                style="
-                    font-size: 20;
-                    color: #526777;
-                    justify-content: left;
-                    display: flex;
-                    align-items: center;
-                    margin-left: 115px;
-                ">
-                <img src="{{ asset('assets/img/speedometercolor.png') }}" alt="icon"
-                    style="width: 50px; margin-left: 55px; margin-right: 15px" />live wpm
+            <div class="setting-item">
+                <img src="{{ asset('assets/img/speedometercolor.png') }}" alt="icon" class="setting-icon">
+                <div>live wpm</div>
             </div>
-            <div
-                style="
-                    font-size: 20px;
-                    justify-content: left;
-                    display: flex;
-                    color: #e5f7ef;
-                    align-items: flex-end;
-                    margin-left: 11%;
-                ">
-                Display a live WPMspeed during the test.
-                <button class="live-wpm-hide"
-                    style="
-                        font-size: 20px;
-                        margin-left: 65px;
-                        background-color: #2aba86;
-                        color: #262a33;
-                    ">
-                    hide
-                </button>
-                <button class="live-wpm-show"
-                    style="
-                        font-size: 20px;
-                        margin-left: 20px;
-                        background-color: #1f232c;
-                        color: #526777;
-                    ">
-                    show
-                </button>
+            <div class="setting-description">Display a live WPM speed during the test.
+                <button class="live-wpm-hide">hide</button>
+                <button class="live-wpm-show">show</button>
             </div>
 
-            <div
-                style="
-                    font-size: 20;
-                    color: #526777;
-                    justify-content: left;
-                    display: flex;
-                    align-items: center;
-                    margin-left: 115px;
-                    margin-top: 30px;
-                ">
-                <img src="{{ asset('assets/img/speedometercolor.png') }}" alt="icon"
-                    style="width: 50px; margin-left: 55px; margin-right: 15px" />live accuracy
+            <div class="setting-item">
+                <img src="{{ asset('assets/img/speedometercolor.png') }}" alt="icon" class="setting-icon">
+                <div>live accuracy</div>
             </div>
-            <div
-                style="
-                    font-size: 20px;
-                    justify-content: left;
-                    display: flex;
-                    color: #e5f7ef;
-                    align-items: flex-end;
-                    margin-left: 11%;
-                ">
-                Display a live accuracy during the test.
-                <button class="live-wpm-hide"
-                    style="
-                        font-size: 20px;
-                        margin-left: 65px;
-                        background-color: #2aba86;
-                        color: #262a33;
-                    ">
-                    hide
-                </button>
-                <button class="live-wpm-show"
-                    style="
-                        font-size: 20px;
-                        margin-left: 20px;
-                        background-color: #1f232c;
-                        color: #526777;
-                    ">
-                    show
-                </button>
+            <div class="setting-description">Display a live accuracy during the test.
+                <button class="live-accuracy-hide">hide</button>
+                <button class="live-accuracy-show">show</button>
             </div>
-
-            <div
-                style="
-                    font-size: 20;
-                    color: #526777;
-                    justify-content: left;
-                    display: flex;
-                    align-items: center;
-                    margin-left: 115px;
-                    margin-top: 30px;
-                ">
-                <img src="{{ asset('assets/img/speedometercolor.png') }}" alt="icon"
-                    style="width: 50px; margin-left: 55px; margin-right: 15px" />timer/progress
+            <div class="setting-item">
+                <img src="{{ asset('assets/img/speedometercolor.png') }}" alt="icon" class="setting-icon">
+                <div>timer/progress</div>
             </div>
-            <div
-                style="
-                    font-size: 20px;
-                    justify-content: left;
-                    display: flex;
-                    color: #e5f7ef;
-                    align-items: flex-end;
-                    margin-left: 11%;
-                ">
-                Display a live timer for time test.
-                <button id="hidebutton3" onclick="toggleButtons()" class="live-wpm-hide"
-                    style="
-                        font-size: 20px;
-                        margin-left: 130px;
-                        background-color: #1f232c;
-                        color: #526777;
-                    ">
-                    hide
-                </button>
-                <button id="showbutton3" onclick="toggleButtons()" class="live-wpm-show"
-                    style="
-                        font-size: 20px;
-                        margin-left: 20px;
-                        background-color: #2aba86;
-                        color: #262a33;
-                    ">
-                    show
-                </button>
+            <div class="setting-description">Display a live timer for time test.
+                <button class="live-timer-hide">hide</button>
+                <button class="live-timer-show">show</button>
             </div>
-
-            <div
-                style="
-                    font-size: 20;
-                    color: #526777;
-                    justify-content: left;
-                    display: flex;
-                    align-items: center;
-                    margin-left: 115px;
-                    margin-top: 30px;
-                ">
-                <img src="{{ asset('assets/img/Aa.png') }}" alt="icon"
-                    style="width: 50px; margin-left: 55px; margin-right: 15px" />font
-            </div>
-            <div
-                style="
-                    font-size: 20px;
-                    justify-content: left;
-                    display: flex;
-                    color: #e5f7ef;
-                    align-items: flex-end;
-                    margin-left: 11%;
-                ">
-                Change font for typing and view.
-                <select id="fontselect" onchange="changeFont()"
-                    style="
-                        font-size: 20px;
-                        margin-left: 170px;
-                        background-color: #1f232c;
-                        color: #526777;
-                        width: 390px;
-                        height: 62px;
-                        border-radius: 8px;
-                        border: none;
-                        font-weight: 900;
-                        padding-left: 15px;
-                        cursor: pointer;
-                    ">
+            <div class="setting-description">Change font for typing and view.
+                <select id="fontselect" onchange="changeFont()" class="font-change">
                     <option value="Roboto Mono">Roboto Mono</option>
                     <option value="Arial">Arial</option>
                     <option value="Helvetica">Helvetica</option>
@@ -219,59 +47,36 @@
                 <script>
                     function toggleFontSelect() {
                         var fontSelect = document.getElementById("fontselect");
-                        fontSelect.style.display =
-                            fontSelect.style.display === "none" ?
-                            "block" :
-                            "none";
+                        fontSelect.style.display = (fontSelect.style.display === "none") ? "block" : "none";
                     }
 
                     function changeFont() {
                         var fontSelect = document.getElementById("fontselect");
-                        var selectedFont =
-                            fontSelect.options[fontSelect.selectedIndex].value;
+                        var selectedFont = fontSelect.options[fontSelect.selectedIndex].value;
                         document.body.style.fontFamily = selectedFont;
                     }
                 </script>
             </div>
-
-            <div
-                style="
-                    font-size: 20;
-                    color: #526777;
-                    justify-content: left;
-                    display: flex;
-                    align-items: center;
-                    margin-left: 115px;
-                    margin-top: 30px;
-                ">
-                <img src="{{ asset('assets/img/fontsize.png') }}" alt="icon"
-                    style="width: 50px; margin-left: 55px; margin-right: 15px" />font-size
+            <div class="setting-item">
+                <img src="{{ asset('assets/img/fontsize.png') }}" alt="icon" class="setting-icon">
+                <div>font-size</div>
             </div>
-            <div
-                style="
-                    font-size: 20px;
-                    justify-content: left;
-                    display: flex;
-                    color: #e5f7ef;
-                    align-items: center;
-                    margin-left: 11%;
-                ">
-                Change font size for typing and view.
-                <input id="hide-button" class="live-wpm-hide-fontsize"
-                    style="
-                        font-size: 20px;
-                        margin-left: 380px;
-                        background-color: #1f232c;
-                        color: #526777;
-                        text-align: center;
-                    "placeholder="20">
-                </input>
+            <div class="setting-description">Change font size for typing and view.
+                <select id="fontsize" onchange="changeFontSize()" class="fontsize">
+                    <option value="28">28</option>
+                    <option value="32">32</option>
+                    <option value="36">36</option>
+                    <option value="40">40</option>
+                </select>
+                <script>
+                    function changeFontSize() {
+                        var fontSize = document.getElementById("fontsize").value;
+                        document.getElementById("typing-area").style.fontSize = fontSize + "px";
+                        document.getElementById("view").style.fontSize = fontSize + "px";
+                    }
+                </script>
             </div>
         </div>
-        <!-- awal footer -->
-        <div class="pt-10">@include('layouts.footer')</div>
-        <!-- akhir footer -->
     </div>
 </body>
-
-</html>
+@endsection

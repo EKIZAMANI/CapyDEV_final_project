@@ -14,8 +14,13 @@ use App\Http\Controllers\AuthManager;
 |
 */
 
+
 Route::get('/', function () {
     return view('index');
+});
+
+Route::get('/type', function () {
+    return view('typing');
 });
 
 Route::get('/about', function () {
@@ -42,4 +47,7 @@ Route::get('/leaderboard', function () {
 
 Route::get('/setting', function () {
     return view('setting');
+});
+Route::get('/custom', function () {
+    return view('custom');
 });
