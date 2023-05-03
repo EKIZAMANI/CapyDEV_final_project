@@ -23,7 +23,7 @@ class AuthManager extends Controller
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
 
-            return redirect()->intended('/about')->with("");
+            return redirect()->intended('/typing')->with("");
         }
         return redirect('/login')->with("error", "Login details are invalid!");
     }
@@ -40,9 +40,9 @@ class AuthManager extends Controller
         $id = DB::table('users')->max('id');
 
         // # Jika email sudah ada yang punya maka kita harus mencegahnya agar tidak bisa register
-        // if(DB::table('users')->where('email', $request->regemail)->exists()){
-        //     return redirect('/login');
-        // }
+         if(DB::table('users')->where('email', $request->regemail)->exists()){
+            return redirect('/login')->with("error", "email has registered!");
+         }
 
         // store data to table user
         DB::table('users')->insert([
@@ -53,7 +53,7 @@ class AuthManager extends Controller
 
         ]);
 
-        return redirect()->intended('/about')->with("");
+        return redirect()->intended('/login')->with("");
     }
 
     public function logout()
