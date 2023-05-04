@@ -35,10 +35,12 @@ Route::get('/login', [AuthManager::class, 'login']);
 Route::post('/login', [AuthManager::class, 'signin']);
 Route::post('/register', [AuthManager::class, 'signup']);
 Route::post('/logout', [AuthManager::class, 'logout']);
+Route::get('/updateWPM', [AuthManager::class, 'store'])->name('typing.store');
+Route::get('/leaderboard', [AuthManager::class, 'leaderboard']);
 
-Route::get('/leaderboard', function () {
-    return view('leaderboard');
-});
+// Route::get('/leaderboard', function () {
+//     return view('leaderboard');
+// });
 
 Route::get('/setting', function () {
     return view('setting');

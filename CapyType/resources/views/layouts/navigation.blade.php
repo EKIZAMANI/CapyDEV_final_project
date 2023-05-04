@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title')</title>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     @vite('resources/css/app.css')
 </head>
 <body class="font-mono text-xl aspect-video" style="background-color: #262A33;" width="1920" height="1080">
@@ -18,13 +19,13 @@
             <a href="/typing"><img src="{{ asset('assets/img/keyboard.png') }}" class="flex pr-2 mr-3" alt="Keyboard Icon" width="54"></a>
             <a href="/leaderboard"><img src="{{ asset('assets/img/crown.png') }}" class="flex pr-2 mr-3" alt="Crown Icon" width="45"></a>
             <a href="/about"><img src="{{ asset('assets/img/information.png') }}" class="flex pr-2 mr-3" alt="Information Icon" width="35"></a>
-            <a href="/setting"><img src="{{ asset('assets/img/setting.png') }}" class="flex pr-2 mr-3" alt="Settings Icon" width="35"></a>
+            {{-- <a href="/setting"><img src="{{ asset('assets/img/setting.png') }}" class="flex pr-2 mr-3" alt="Settings Icon" width="35"></a> --}}
         </div>
     </div>
             @auth
                 <form action="/logout" method="post">
                     @csrf
-                    <a href="#"><button class="px-5 py-3 mr-10 font-bold rounded-lg" style="background-color: #1F232C; font-size: 16px; color: #526777;">logout
+                    <a href="#"><button class="px-5 py-3 mr-10 font-bold rounded-lg" style="background-color: #1F232C; font-size: 16px; color: #526777;">{{ auth()->user()->name}} -> logout
                 </form>
             @else
             <a href="/login"><button class="px-5 py-3 mr-10 font-bold rounded-lg" style="background-color: #1F232C; font-size: 16px; color: #526777;">
@@ -39,9 +40,9 @@
 
 </header>
 <footer class="flex justify-center pb-3" style="font-size: 20;" >
-    <div class="flex flex-wrap   p-3">
+    <div class="flex flex-wrap p-3">
         <a href="mailto:capytype@gmail.com" target="_blank" class="flex items-center justify-center">
-            <img src="{{ asset('assets/img/envelope.png') }}" alt="Icon" 
+            <img src="{{ asset('assets/img/envelope.png') }}" alt="Icon"
             class="pr-2" width="37" style="filter: invert(37%) sepia(26%) saturate(418%) hue-rotate(164deg) brightness(95%) contrast(86%);">
             <p class="mr-2 text-gray-500">contact</p>
         </a>
@@ -63,7 +64,7 @@
             <p class="mr-2 text-gray-500">support</p>
         </a>
     </div>
-</footer>    
+</footer>
 </body>
 </html>
 
