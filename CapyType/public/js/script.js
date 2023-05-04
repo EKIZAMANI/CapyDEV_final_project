@@ -19,7 +19,7 @@ let timer,
     counter = 1;
     var customWordsBtn = document.querySelector("#custom-words-btn");
     var customWordsPopup = document.querySelector(".custom");
-  
+
     custom = prompt("Enter your custom words:", "");
     if (custom != null) {
       paragraph = custom.value;
@@ -28,11 +28,11 @@ let timer,
       customWordsPopup.style.display = 'none';
     }
   }
-  
+
 
   function loadParagraph() {
     paragraph = randomParagraph();
-    
+
     typingText.innerHTML = "";
     let joinedParagraph = joinParagraph(paragraph, " ");
     joinedParagraph.split("").forEach(char => {
@@ -135,6 +135,28 @@ function initTyping() {
       });
     }
   } else {
+    if (timeLeft == 0) {
+        let wpm = Math.round(((charIndex - mistakes) / 5) / maxTime * 60);
+        let accuracy = Math.round(((charIndex - mistakes) / charIndex) * 100);
+        // make an AJAX request to Laravel controller to store the values
+        $.ajax({
+          url: '/updateWPM',
+          type: 'get',
+          data: {
+            wpm: wpm,
+            accuracy: accuracy,
+            _token: $('meta[name="csrf-token"]').attr('content')
+          },
+          success: function(response) {
+            console.log(response);
+            console.log('WPM:', wpm);
+            console.log('Accuracy:', accuracy);
+          },
+          error: function(error) {
+            //console.log(error);
+          }
+        });
+      }
     clearInterval(timer);
     inpField.value = "";
   }
