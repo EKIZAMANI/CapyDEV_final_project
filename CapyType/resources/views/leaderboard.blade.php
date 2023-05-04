@@ -37,5 +37,8 @@ CapyType | Leaderboard
         </table>
         </div>
     </div>
+    <div style="padding-bottom: 300px;">
+
+    </div>
 </body>
 @endsection
