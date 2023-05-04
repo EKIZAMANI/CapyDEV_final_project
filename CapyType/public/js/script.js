@@ -7,15 +7,33 @@ const typingText = document.querySelector(".typing-text p"),
   cpmTag = document.querySelector(".cpm span"),
   accuracyTag = document.querySelector(".accuracy span"),
   timeButtons = document.querySelectorAll(".flex button");
+  var custom;
+  let paragraph, counter;
+
 
 let timer,
   maxTime = 60,
   timeLeft = maxTime,
   charIndex = mistakes = isTyping = 0;
 
+  function custom() {
+    counter = 1;
+    custom = prompt("Enter your custom words:", "");
+    if (custom != null) {
+
+      paragraph = custom.value;
+      loadParagraph();
+    }
+  }
+  
+
+
+
+
 function loadParagraph() {
+  paragraph = randomParagraph();
+  
   typingText.innerHTML = "";
-  let paragraph = randomParagraph();
   let joinedParagraph = joinParagraph(paragraph, " ");
   joinedParagraph.split("").forEach(char => {
     let span = `<span>${char}</span>`;
@@ -31,11 +49,19 @@ function loadParagraph() {
 const randomParagraph = () => {
   const paragraphIndex = Math.floor(Math.random() * paragraphs.length);
   const words = paragraphs[paragraphIndex].split(" ").sort(() => Math.random() - 0.5);
-  return words.join(" ");
+
+
+  if (counter == 1){
+    return custom;
+  }
+  else{
+    return words.join(" ");
+  }
 };
 
 //function to join paragraph many string
 function joinParagraph(paragraph, delimiter) {
+
   let cleanParagraph = paragraph.replace(/[^\w\s]/g, "");
   let words = cleanParagraph.split(" ");
   let hyphenatedWords = words.map(word => word.replace(/[^A-Za-z0-9]/g, ""));
@@ -114,6 +140,7 @@ const btn15 = document.getElementById("btn-15");
 const btn30 = document.getElementById("btn-30");
 const btn60 = document.getElementById("btn-60");
 const btn120 = document.getElementById("btn-120");
+// const cstm = document.getElementById("cstm");
 
 btn15.addEventListener("click", () => {
   maxTime = timeLeft = 15;
@@ -135,6 +162,9 @@ btn120.addEventListener("click", () => {
   resetGame();
 });
 
+
 loadParagraph();
 inpField.addEventListener("input", initTyping);
 tryAgainBtn.addEventListener("click", resetGame);
+
+
