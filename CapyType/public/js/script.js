@@ -135,8 +135,9 @@ function initTyping() {
       });
     }
   } else {
-    if (timeLeft == 0) {
-        let wpm = Math.round(((charIndex - mistakes) / 5) / maxTime * 60);
+    if (timeLeft == 0 || charIndex == characters.length - 1) {
+        let wpm = Math.round(((charIndex - mistakes) / 5) / (maxTime - timeLeft) * 60);
+        wpm = wpm < 0 || !wpm || wpm === Infinity ? 0 : wpm;
         let accuracy = Math.round(((charIndex - mistakes) / charIndex) * 100);
         // make an AJAX request to Laravel controller to store the values
         $.ajax({
@@ -151,9 +152,10 @@ function initTyping() {
             console.log(response);
             console.log('WPM:', wpm);
             console.log('Accuracy:', accuracy);
+            window.location.href = "/typing"
           },
           error: function(error) {
-            //console.log(error);
+            console.log(error);
           }
         });
       }
