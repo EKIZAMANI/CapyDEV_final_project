@@ -1,6 +1,8 @@
 @extends('layouts.navigation')
 @section('content')
-
+@section('title')
+CapyType | Leaderboard
+@endsection
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/leaderboard.css">
 <body style="background-color: #262a33; font-family: Roboto Mono;">
@@ -19,69 +21,24 @@
                     </tr>
                 </thead>
                 <tbody style="font-size: 20px;">
+                @foreach ($leaderboards as $leaderboard)
                 <tr style="border-radius: 20px;">
-                    <td class="no">1</td>
-                    <td class="name"><img src="assets/img/pictlogo.png" alt="icon" style="width: 20px; padding-right: 20px;">Mr.Pudidi</td>
-                    <td class="wpm">156</td>
-                    <td class="accuracy">98.12%</td>
+                    <td class="no">{{ $loop->iteration }} |</td>
+                    <td class="name"><img src="assets/img/pictlogo.png" alt="icon" style="width: 20px; padding-left: 30px;"> {{ $leaderboard->name }}</td>
+                    <td class="wpm">{{ $leaderboard->wpm }}</td>
+                    @if ($leaderboard->accuracy != NULL)
+                    <td class="accuracy">{{ $leaderboard->accuracy }}%</td>
+                    @else
+                    <td class="accuracy">{{ $leaderboard->accuracy }}</td>
+                    @endif
                 </tr>
-                <tr>
-                    <td class="no">2</td>
-                    <td class="name"><img src="assets/img/pictlogo.png" alt="icon" style="width: 20px; padding-right: 20px;">ijal</td>
-                    <td class="wpm">143</td>
-                    <td class="accuracy">97.14%</td>
-                </tr>
-                <tr>
-                    <td class="no">3</td>
-                    <td class="name"><img src="assets/img/pictlogo.png" alt="icon" style="width: 20px; padding-right: 20px;">furqan</td>
-                    <td class="wpm">141</td>
-                    <td class="accuracy">98.41%</td>
-                </tr>
-                <tr>
-                    <td class="no">4</td>
-                    <td class="name"><img src="assets/img/pictlogo.png" alt="icon" style="width: 20px; padding-right: 20px;">budy</td>
-                    <td class="wpm">137</td>
-                    <td class="accuracy">94.52%</td>
-                </tr>
-                <tr>
-                    <td class="no">5</td>
-                    <td class="name"><img src="assets/img/pictlogo.png" alt="icon" style="width: 20px; padding-right: 20px;">asep</td>
-                    <td class="wpm">125</td>
-                    <td class="accuracy">93.32%</td>
-                </tr>
-                <tr>
-                    <td class="no">6</td>
-                    <td class="name"><img src="assets/img/pictlogo.png" alt="icon" style="width: 20px; padding-right: 20px;">ardy</td>
-                    <td class="wpm">119</td>
-                    <td class="accuracy">99.12%</td>
-                </tr>
-                <tr>
-                    <td class="no">7</td>
-                    <td class="name"><img src="assets/img/pictlogo.png" alt="icon" style="width: 20px; padding-right: 20px;">riyan</td>
-                    <td class="wpm">112</td>
-                    <td class="accuracy">98.31%</td>
-                </tr>
-                <tr>
-                    <td class="no">8</td>
-                    <td class="name"><img src="assets/img/pictlogo.png" alt="icon" style="width: 20px; padding-right: 20px;">siti</td>
-                    <td class="wpm">98</td>
-                    <td class="accuracy">96.12%</td>
-                </tr>
-                <tr>
-                    <td class="no">9</td>
-                    <td class="name"><img src="assets/img/pictlogo.png" alt="icon" style="width: 20px; padding-right: 20px;">fichi</td>
-                    <td class="wpm">87</td>
-                    <td class="accuracy">99.12%</td>
-                </tr>
-                <tr>
-                    <td class="no">10</td>
-                    <td class="name"><img src="assets/img/pictlogo.png" alt="icon" style="width: 20px; padding-right: 20px;">cekdo</td>
-                    <td class="wpm">85</td>
-                    <td class="accuracy" >91.32%</td>
-                </tr>
+                @endforeach
                 </tbody>
         </table>
         </div>
+    </div>
+    <div style="padding-bottom: 300px;">
+
     </div>
 </body>
 @endsection
