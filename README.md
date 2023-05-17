@@ -42,7 +42,7 @@ DB_PASSWORD=your_password
 buatlah database baru bernama capytype didalam http://localhost/phpmyadmin/ atau mysql
 
 ```bash
-create database capytype;
+create database CapyDB;
 ```
 
 migrate database masing-masing device didalam laravel
