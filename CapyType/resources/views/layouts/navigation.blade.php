@@ -19,7 +19,7 @@
             <a href="/typing"><img src="{{ asset('assets/img/keyboard.png') }}" class="flex pr-2 mr-3" alt="Keyboard Icon" width="54"></a>
             <a href="/leaderboard"><img src="{{ asset('assets/img/crown.png') }}" class="flex pr-2 mr-3" alt="Crown Icon" width="45"></a>
             <a href="/about"><img src="{{ asset('assets/img/information.png') }}" class="flex pr-2 mr-3" alt="Information Icon" width="35"></a>
-            {{-- <a href="/setting"><img src="{{ asset('assets/img/setting.png') }}" class="flex pr-2 mr-3" alt="Settings Icon" width="35"></a> --}}
+            <a href="/setting"><img src="{{ asset('assets/img/setting.png') }}" class="flex pr-2 mr-3" alt="Settings Icon" width="35"></a>
         </div>
     </div>
             @auth

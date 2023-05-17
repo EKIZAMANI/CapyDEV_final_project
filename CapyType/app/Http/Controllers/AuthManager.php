@@ -84,4 +84,21 @@ class AuthManager extends Controller
             ->get();
         return view('leaderboard', compact('leaderboards'));
     }
+
+    public function setting(){
+        $user = Auth::user();
+        return view('setting', compact('user'));
+    }
+
+        public function updateSetting(Request $request)
+    {
+        $user = Auth::user();
+        $user->live_wpm = $request->has('live_wpm');
+        $user->live_accuracy = $request->has('live_accuracy');
+        $user->font_family = $request->font_family;
+        $user->font_size = $request->font_size;
+        $user->save();
+
+        return redirect('/setting')->with('success', 'Settings updated successfully.');
+    }
 }

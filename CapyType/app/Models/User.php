@@ -23,6 +23,11 @@ class User extends Authenticatable
         'password',
         'wpm',
         'accuracy',
+        //setting
+        'live_wpm', 
+        'live_accuracy', 
+        'font_family', 
+        'font_size'
     ];
 
     /**

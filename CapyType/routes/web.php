@@ -42,6 +42,6 @@ Route::get('/leaderboard', [AuthManager::class, 'leaderboard']);
 //     return view('leaderboard');
 // });
 
-Route::get('/setting', function () {
-    return view('setting');
-});
+Route::get('/setting', [App\Http\Controllers\AuthManager::class, 'setting'])->name('setting.edit');
+Route::post('/setting', [App\Http\Controllers\AuthManager::class, 'updateSetting'])->name('setting.edit');
+

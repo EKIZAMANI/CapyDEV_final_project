@@ -6,7 +6,6 @@ CapyType | Setting
 
 <link rel="stylesheet" href="assets/css/setting.css">
 
-<body>
     <div class="font-mono setting">
         <div>
             <div class="sub-heading-text"><img src="assets/img/setting.png" alt="" class="sub-icon">setting</div>
@@ -29,14 +28,7 @@ CapyType | Setting
                 <button class="live-accuracy-hide">hide</button>
                 <button class="live-accuracy-show">show</button>
             </div>
-            <div class="setting-item">
-                <img src="{{ asset('assets/img/speedometercolor.png') }}" alt="icon" class="setting-icon">
-                <div>timer/progress</div>
-            </div>
-            <div class="setting-description">Display a live timer for time test.
-                <button class="live-timer-hide">hide</button>
-                <button class="live-timer-show">show</button>
-            </div>
+
             <div class="setting-description">Change font for typing and view.
                 <select id="fontselect" onchange="changeFont()" class="font-change">
                     <option value="Roboto Mono">Roboto Mono</option>
@@ -78,5 +70,4 @@ CapyType | Setting
             </div>
         </div>
     </div>
-</body>
 @endsection
