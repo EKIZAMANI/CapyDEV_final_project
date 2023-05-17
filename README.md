@@ -1,5 +1,3 @@
-# SpeedTypingTest-CapyType
-
 ## Anggota Kelompok
 
 1. Furqan Ramadhan (2108107010013)
@@ -9,6 +7,10 @@
 5. Arrijalul Khairi (2108107010037)
 6. Elsa Mardhatillah Hariska (2108107010048)
 7. Iwansur Sidik (2108107010091)
+
+# SpeedTypingTest-CapyType
+
+    Speed typing merupakan sebuah aplikasi berbasis website yang bertujuan untuk menguji coba kecepatan mengetik yang dihitung dalam wpm (words per minute), cpm (character per minute), dan accuracy yang dihitung dalam persentase. User dapat melakukan registrasi terlebih dahulu, kemudian login. Selanjutnya user bisa mencoba mengetik yang disediakan dalam feature batasan waktu, ataupun tanpa batasan waktu. User dapat bermain dengan teman-teman untuk menghasilkan leaderboard siapa saja yang menduduki peringkat teratas.  Untuk persiapan menjalankan code, dapat dilihat pada langkah dibawah ini.
 
 ## Persiapan Menjalankan Program
 
@@ -33,7 +35,7 @@ cp .env.example .env
 ganti nama database didalam .env menjadi capytype serta masukkan pasword sesuai device masing-masing.
 
 ```bash
-DB_DATABASE=capytype
+DB_DATABASE=CapyDB
 DB_PASSWORD=your_password
 ```
 
