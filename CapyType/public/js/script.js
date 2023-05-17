@@ -66,30 +66,17 @@ function joinParagraph(paragraph, delimiter) {
   return hyphenatedParagraph;
 }
 
+
 function initTyping() {
   let characters = typingText.querySelectorAll("span");
   let typedChar = inpField.value.split("")[charIndex];
-  let isMistakeWord = false; // keep track of whether the current word has mistakes
-
   if (charIndex < characters.length - 1 && timeLeft > 0) {
     if (!isTyping) {
       timer = setInterval(initTimer, 1000);
       isTyping = true;
     }
-
-    // check if the current word has mistakes
-    const currentWord = characters[charIndex].innerText.trim();
-    const currentWordChars = currentWord.split("");
-    const typedChars = inpField.value.split("");
-    for (let i = 0; i < currentWordChars.length; i++) {
-      if (typedChars[charIndex + i] !== currentWordChars[i]) {
-        isMistakeWord = true;
-        break;
-      }
-    }
-
     if (typedChar == null) {
-      if (charIndex > 0 && !isMistakeWord) {
+      if (charIndex > 0) {
         charIndex--;
         if (characters[charIndex].classList.contains("incorrect")) {
           mistakes--;
@@ -118,51 +105,132 @@ function initTyping() {
     mistakeTag.innerText = mistakes;
     cpmTag.innerText = charIndex - mistakes;
     accuracyTag.innerText = accuracy;
-
-    // if the current word has mistakes, prevent backspacing
-    if (isMistakeWord) {
-      inpField.addEventListener("keydown", (event) => {
-        if (event.key === "Backspace") {
-          event.preventDefault();
-        }
-      });
-    } else {
-      // otherwise, allow backspacing
-      inpField.removeEventListener("keydown", (event) => {
-        if (event.key === "Backspace") {
-          event.preventDefault();
-        }
-      });
-    }
   } else {
     if (timeLeft == 0 || charIndex == characters.length - 1) {
-        let wpm = Math.round(((charIndex - mistakes) / 5) / (maxTime - timeLeft) * 60);
-        wpm = wpm < 0 || !wpm || wpm === Infinity ? 0 : wpm;
-        let accuracy = Math.round(((charIndex - mistakes) / charIndex) * 100);
-        // make an AJAX request to Laravel controller to store the values
-        $.ajax({
-          url: '/updateWPM',
-          type: 'get',
-          data: {
-            wpm: wpm,
-            accuracy: accuracy,
-            _token: $('meta[name="csrf-token"]').attr('content')
-          },
-          success: function(response) {
-            console.log(response);
-            console.log('WPM:', wpm);
-            console.log('Accuracy:', accuracy);
-            window.location.href = "/typing"
-          },
-          error: function(error) {
-            console.log(error);
-          }
-        });
-      }
+              let wpm = Math.round(((charIndex - mistakes) / 5) / (maxTime - timeLeft) * 60);
+              wpm = wpm < 0 || !wpm || wpm === Infinity ? 0 : wpm;
+              let accuracy = Math.round(((charIndex - mistakes) / charIndex) * 100);
+              // make an AJAX request to Laravel controller to store the values
+              $.ajax({
+                url: '/updateWPM',
+                type: 'get',
+                data: {
+                  wpm: wpm,
+                  accuracy: accuracy,
+                  _token: $('meta[name="csrf-token"]').attr('content')
+                },
+                success: function(response) {
+                  console.log(response);
+                  console.log('WPM:', wpm);
+                  console.log('Accuracy:', accuracy);
+                  window.location.href = "/typing"
+                },
+                error: function(error) {
+                  console.log(error);
+                }
+              });
+            }
     clearInterval(timer);
     inpField.value = "";
   }
 }
+// function initTyping() {
+//   let characters = typingText.querySelectorAll("span");
+//   let typedChar = inpField.value.split("")[charIndex];
+//   let isMistakeWord = false; // keep track of whether the current word has mistakes
+
+//   if (charIndex < characters.length - 1 && timeLeft > 0) {
+//     if (!isTyping) {
+//       timer = setInterval(initTimer, 1000);
+//       isTyping = true;
+//     }
+
+//     // check if the current word has mistakes
+//     const currentWord = characters[charIndex].innerText.trim();
+//     const currentWordChars = currentWord.split("");
+//     const typedChars = inpField.value.split("");
+//     for (let i = 0; i < currentWordChars.length; i++) {
+//       if (typedChars[charIndex + i] !== currentWordChars[i]) {
+//         isMistakeWord = true;
+//         break;
+//       }
+//     }
+
+//     if (typedChar == null) {
+//       if (charIndex > 0 && !isMistakeWord) {
+//         charIndex--;
+//         if (characters[charIndex].classList.contains("incorrect")) {
+//           mistakes--;
+//         }
+//         characters[charIndex].classList.remove("correct", "incorrect");
+//       }
+//     } else {
+//       if (characters[charIndex].innerText == typedChar) {
+//         characters[charIndex].classList.add("correct");
+//       } else {
+//         mistakes++;
+//         characters[charIndex].classList.add("incorrect");
+//       }
+//       charIndex++;
+//     }
+//     characters.forEach(span => span.classList.remove("active"));
+//     characters[charIndex].classList.add("active");
+
+//     let wpm = Math.round(((charIndex - mistakes) / 5) / (maxTime - timeLeft) * 60);
+//     wpm = wpm < 0 || !wpm || wpm === Infinity ? 0 : wpm;
+
+//     let accuracy = Math.round(((charIndex - mistakes) / charIndex) * 100);
+//     accuracy = accuracy < 0 || !accuracy || accuracy === Infinity ? 0 : accuracy;
+
+//     wpmTag.innerText = wpm;
+//     mistakeTag.innerText = mistakes;
+//     cpmTag.innerText = charIndex - mistakes;
+//     accuracyTag.innerText = accuracy;
+
+//     // if the current word has mistakes, prevent backspacing
+//     if (isMistakeWord) {
+//       inpField.addEventListener("keydown", (event) => {
+//         if (event.key === "Backspace") {
+//           event.preventDefault();
+//         }
+//       });
+//     } else {
+//       // otherwise, allow backspacing
+//       inpField.removeEventListener("keydown", (event) => {
+//         if (event.key === "Backspace") {
+//           event.preventDefault();
+//         }
+//       });
+//     }
+//   } else {
+//     if (timeLeft == 0 || charIndex == characters.length - 1) {
+//         let wpm = Math.round(((charIndex - mistakes) / 5) / (maxTime - timeLeft) * 60);
+//         wpm = wpm < 0 || !wpm || wpm === Infinity ? 0 : wpm;
+//         let accuracy = Math.round(((charIndex - mistakes) / charIndex) * 100);
+//         // make an AJAX request to Laravel controller to store the values
+//         $.ajax({
+//           url: '/updateWPM',
+//           type: 'get',
+//           data: {
+//             wpm: wpm,
+//             accuracy: accuracy,
+//             _token: $('meta[name="csrf-token"]').attr('content')
+//           },
+//           success: function(response) {
+//             console.log(response);
+//             console.log('WPM:', wpm);
+//             console.log('Accuracy:', accuracy);
+//             window.location.href = "/typing"
+//           },
+//           error: function(error) {
+//             console.log(error);
+//           }
+//         });
+//       }
+//     clearInterval(timer);
+//     inpField.value = "";
+//   }
+// }
 
 function initTimer() {
   if (timeLeft > 0) {
@@ -222,7 +290,7 @@ function changeColor(button) {
     document.querySelector('.time').style.color = '#2ABA86';
     document.getElementById('words-btn').style.color = '#526777';
     button.style.color = '#2ABA86';
-    document.querySelector('.typing-text').style.fontFamily = 'initial';
+
   } else if (button.id === 'words-btn') {
     document.getElementById('time-btn').style.color = '#526777';
     document.querySelector('.time').style.color = '#526777';
