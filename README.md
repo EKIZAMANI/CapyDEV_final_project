@@ -11,7 +11,7 @@
 # SpeedTypingTest-CapyType
 
 <div style="text-align: center;">
-  <img src="CapyType/public/assets/img/logocapy.png" alt="Logo" width="200" height="200">
+  <img src="CapyType/public/assets/img/logocapy.png" alt="Logo" style="display: block; margin-left: auto; margin-right: auto; width: 200px; height: 200px;">
 </div>
 
 Speed typing merupakan sebuah aplikasi berbasis website yang bertujuan untuk menguji coba kecepatan mengetik yang dihitung dalam wpm (words per minute), cpm (character per minute), dan accuracy yang dihitung dalam persentase. User dapat melakukan registrasi terlebih dahulu, kemudian login. Selanjutnya user bisa mencoba mengetik yang disediakan dalam feature batasan waktu, ataupun tanpa batasan waktu. User dapat bermain dengan teman-teman untuk menghasilkan leaderboard siapa saja yang menduduki peringkat teratas. Untuk persiapan menjalankan code, dapat dilihat pada langkah dibawah ini.
